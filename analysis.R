@@ -23,7 +23,7 @@ zero.variance <- list(prec = list(initial = 15, fixed = TRUE))
 
 
 # Number of grid points in each dimension
-n.xy <- 40
+n.xy <-5 
 model.to.run <- 0 #0: No covs; 1: with covs
 
 # Formulas
