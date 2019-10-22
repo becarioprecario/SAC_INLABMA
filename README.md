@@ -9,7 +9,7 @@ is illustated using the the SAC spatial econometrics model.
 
 These are the files provided:
 
-* `loaddata.RData`, italian turnout in the 2011 ellection in Italy plus adjacency matrix.
+* `loaddata.RData`, turnout in the 2011 ellection in Italy dataset plus adjacency matrix.
 
 * `utils.R`, some configuration options and functiions required by the main file.
 
