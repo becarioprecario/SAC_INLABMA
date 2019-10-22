@@ -11,9 +11,9 @@ These are the files provided:
 
 * `loaddata.RData`, italian turnout in the 2011 ellection in Italy plus adjacency matrix.
 
-* `utils.R`, some configuration options and funcitons required by the main file.
+* `utils.R`, some configuration options and functiions required by the main file.
 
-* `analysis.R, main `R` file (i.e., the one you want to run). `n.xy` controls 
+* `analysis.R`, main `R` file (i.e., the one you want to run). `n.xy` controls 
   the number of grid points in each dimension and `model.to.run` the model
   to run (`0` for no covariates and `1` for including covariates).
 
