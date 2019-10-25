@@ -23,7 +23,7 @@ zero.variance <- list(prec = list(initial = 15, fixed = TRUE))
 
 
 # Number of grid points in each dimension
-n.xy <-  20
+n.xy <-  c(40, 20) #rho, lambda)
 model.to.run <- 1 #0: No covs; 1: with covs
 create.fig <- FALSE # Create plot of mliks and weights?
 save.results <- TRUE
@@ -42,14 +42,14 @@ if(!model.to.run) {
 }
 
 # Grid of points
-#xx.rho <- seq(0.85, 0.95, length.out = 5) #by =  0.005)
-#xx.lambda <- seq(0.00, 0.3, length.out = 10) #by = 0.005)
 
 # Using ML estimates
-xx.rho <- seq(sac$rho - 3 * sac$rho.se, sac$rho + 3 * sac$rho.se,
-  length.out = n.xy)
-xx.lambda <- seq(sac$lambda - 3 * sac$lambda.se,
-  sac$lambda + 3 * sac$lambda.se, length.out = n.xy)
+
+# Original scale (rho, lambda)
+#xx.rho <- seq(sac$rho - 3 * sac$rho.se, sac$rho + 3 * sac$rho.se,
+#  length.out = n.xy[1])
+#xx.lambda <- seq(sac$lambda - 3 * sac$lambda.se,
+#  sac$lambda + 3 * sac$lambda.se, length.out = n.xy[2])
 
 # Using 'internal scale': log( (1 + x) / (1 - x))
 #  Variance in internal scale is: serr(x)^2 * (2 / [(1 + x) (1 - x)])^2
@@ -69,13 +69,13 @@ err.trans <- function(x, se.x) {
 xx.rho <- f.trans.inv(
   seq(f.trans(sac$rho) - 3 * err.trans(sac$rho, sac$rho.se),
     f.trans(sac$rho) + 3 * err.trans(sac$rho, sac$rho.se),
-    length.out = n.xy)
+    length.out = n.xy[1])
 )
 
 xx.lambda <- f.trans.inv(
   seq(f.trans(sac$lambda) - 3 * err.trans(sac$lambda, sac$lambda.se),
     f.trans(sac$lambda) + 3 * err.trans(sac$lambda, sac$lambda.se),
-    length.out = n.xy)
+    length.out = n.xy[2])
 )
 
 
