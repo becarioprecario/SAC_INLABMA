@@ -35,7 +35,7 @@ if(!model.to.run) {
   pdffile <- "ww0.pdf"
   savefile <- "results0.RData"
 } else {
-  form <- TURNOUT01 ~ 1 + GDPCAP
+  form <- TURNOUT01 ~ 1 + log(GDPCAP)
   sac <- sac1
   pdffile <- "ww1.pdf"
   savefile <- "results1.RData"
