@@ -117,7 +117,7 @@ legend("topleft", legend = c("MCMC", "BMA", "ML"), lty = 1:3, bty = "n")
 plot(density(res1[, "lambda"], bw = 0.035), xlab = expression(lambda),
   ylab = "density", main = "", ylim = c(0, 3.5))
 lines(density(rholambda$lambda, weights = rholambda$w, bw = 0.035), lty = 2)
-abline(v = sac0$lambda, lty = 3)
+abline(v = sac1$lambda, lty = 3)
 legend("topleft", legend = c("MCMC", "BMA", "ML"), lty = 1:3, bty = "n")
 
 dev.off()
